@@ -115,12 +115,6 @@ def get_config():
         --huber_delta <float>
             coefficient of huber loss.  
     
-    PPG parameters:
-        --aux_epoch <int>
-            number of auxiliary epochs. (default: 4)
-        --clone_coef <float>
-            clone term coefficient (default: 0.01)
-    
     Run parameters：
         --use_linear_lr_decay
             by default, do not apply linear decay to learning rate. If set, use a linear schedule on the learning rate
@@ -284,6 +278,7 @@ def get_config():
     # pretrained parameters
     parser.add_argument("--model_dir", type=str, default=None, help="by default None. set the path to pretrained model.")
 
+    # DAE parameters
     parser.add_argument("--beta", type=float, default=0.0, help="DAE(beta)")
     parser.add_argument("--rew_hidden_size", type=float, default=128,
                         help="Dimension of hidden layers for reward networks")
